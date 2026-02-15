@@ -1,6 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root{
-    --primary-purple : #623fe3;
-    --alt-purple : #8d76ff;
+:root {
+    --primary-purple: #623fe3;
+    --alt-purple: #8d76ff;
+    --font-primary: "Montserrat", sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    width: 85vw;
+    margin: auto;
+}
+
+.btn1 {
+    background-color: var(--alt-purple);
+    color: white;
+    padding: 10px 8px;
+    border-radius: 8px;
+    transition: all 300ms ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn1:hover {
+    background-color: var(--primary-purple);
+}
+
+/* Navigation Bar */
+header {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.left,
+.right {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left a {
+    height: 45px;
+}
+
+.left a img {
+    height: 100%;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    height: 100%;
+}
+
+ul div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right ul li {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.right ul li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0;
+}
+
+/* Hover underline effect */
+.right ul li a::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    display: block;
+    position: absolute;
+    background-color: var(--alt-purple);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.right ul li a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Canvas Background */
+.canvas {
+    height: 100vh;
+    width: 100vw;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+        linear-gradient(to right, rgba(229, 231, 235, 0.8) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(229, 231, 235, 0.8) 1px, transparent 1px),
+        radial-gradient(circle 500px at 20% 20%, rgba(139, 92, 246, 0.3), transparent),
+        radial-gradient(circle 500px at 80% 80%, rgba(59, 130, 246, 0.3), transparent);
+    background-size:
+        42px 42px,
+        42px 42px,
+        100% 100%,
+        100% 100%;
+}
+
+
+
+
+
+/* Focus styles for keyboard navigation */
