@@ -51,3 +51,24 @@ function resetAutoPlay() {
 
 // 4. Kick off the auto-play when the script loads
 startAutoPlay();
+
+// Initialize Lenis for smooth scrolling
+const lenis = new Lenis({
+    duration: 1.2, // Controls the speed/smoothness of the scroll
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing function
+    direction: 'vertical', 
+    gestureDirection: 'vertical',
+    smooth: true,
+    mouseMultiplier: 1,
+    smoothTouch: false, // Keep false to let touch devices use native smooth scrolling
+    touchMultiplier: 2,
+});
+
+// Create the animation loop
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+// Start the loop
+requestAnimationFrame(raf);
