@@ -423,11 +423,10 @@ ul div {
 }
 
 /* why -section */
-.why-page{
-}
+.why-page {}
 
 .why-section {
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -510,9 +509,9 @@ ul div {
 
 /* process section */
 
-.process-page{}
+.process-page {}
 
-.process{
+.process {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -569,7 +568,7 @@ ul div {
     font-weight: 600;
     line-height: 1;
     margin: 0 0 16px;
-    background: linear-gradient(135deg, var(--primary-purple),var(--alt-purple));
+    background: linear-gradient(135deg, var(--primary-purple), var(--alt-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -618,63 +617,64 @@ ul div {
 }
 
 /* photo gallery section */
-.photo-gallery{
-    background-color: rgba(255, 255, 255, 0.3); 
+.photo-gallery {
+    background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 }
 
-.gallery{
+.gallery {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.photo-grid{
+.photo-grid {
     margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
-.photo-card{
+.photo-card {
     aspect-ratio: 1/1 !important;
     height: 100%;
     border-radius: 16px;
     transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.photo-card:hover{
+.photo-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 32px rgba(180, 100, 200, .30);
 }
 
-.photo-card img{
+.photo-card img {
     width: 100%;
     border-radius: inherit;
 }
 
 
 /* Lenis Smooth Scroll Recommended Setup */
-html.lenis, html.lenis body {
-  height: auto;
+html.lenis,
+html.lenis body {
+    height: auto;
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+    scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+    overscroll-behavior: contain;
 }
 
 .lenis.lenis-stopped {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .lenis.lenis-smooth iframe {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 
@@ -734,7 +734,124 @@ html.lenis, html.lenis body {
 
 /* animation for media section */
 @keyframes scroll {
-    0% {transform: translateX(0);}
-    100% {transform: translateX(-100%);}
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
+/* The Premium Card */
+.partner-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pt-logo{
+    width: 100%;
+    max-width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.pt-logo img{
+    width: 100%;
+}
+
+.partner-card {
+    margin-top: 30px;
+    position: relative;
+    background: linear-gradient(145deg, #0f172a);
+    border: 1px solid #334155;
+    border-radius: 24px;
+    padding: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Inner content */
+.card-content {
+    position: relative;
+    z-index: 2;
+    transform: translateZ(30px);
+    /* Pops the text out during 3D tilt */
+}
+
+.partner-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(to right, #ffffff, #cbd5e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+.partner-description {
+    font-size: 17px;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+
+.partner-link {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 2px solid var(--primary-purple);
+    padding-bottom: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.partner-link:hover {
+    color: var(--primary-purple);
+}
+
+/* Optional: Adding a subtle glow effect on hover */
+.partner-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(245, 158, 11, 0.06), transparent 40%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.partner-card:hover::before {
+    opacity: 1;
+}
+
+@media (max-width : 800px) {
+    .partner-card{
+        flex-direction: column;
+        /* padding: 1.5rem; */
+    }
+    .partner-title{
+        font-size: 25px;
+        /* font-weight: 500; */
+    }
+    .partner-description{
+        font-size: 16px;
+    }
+    .partner-link{
+        font-size: 16px;
+    }
+}
