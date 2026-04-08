@@ -373,9 +373,92 @@
 
     </section>
 
-    <footer>
-        <div class="container">
-            <p>©2026 Sozoloop. All rights reserved.</p>
+    <section>
+        <div class="container contact-form">
+            <div class="sl-card">
+                <form id="sl-form-view" action="#" method="post">
+                    <span class="sl-pill">Contact Us</span>
+                    <h2 class="sl-title">Get In <span>Touch</span></h2>
+                    <p class="sl-sub">Where creativity meets technology. We'd love to hear from you.</p>
+
+                    <div class="sl-field">
+                        <label for="sl-name">NAME</label>
+                        <input id="sl-name" name="name" type="text" placeholder="Jane Doe" required />
+                    </div>
+
+                    <div class="sl-field">
+                        <label for="sl-email">EMAIL ADDRESS</label>
+                        <input id="sl-email" name="email" type="email" placeholder="jane@example.com" required />
+                    </div>
+
+                    <div class="sl-field">
+                        <label for="sl-subject">SUBJECT</label>
+                        <input id="sl-subject" name="subject" type="text" placeholder="How can we help?" required />
+                    </div>
+
+                    <div class="sl-field">
+                        <label for="sl-msg">MESSAGE</label>
+                        <textarea id="sl-msg" name="message" placeholder="Tell us more about your project…" rows="5"
+                            required></textarea>
+                    </div>
+
+                    <button class="sl-btn" id="sl-submit" type="submit">
+                        <span>Send Message</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </button>
+
+                    <p class="sl-error" id="sl-error" style="display: none;">
+                        Please fill in all required fields.
+                    </p>
+
+                    <div class="sl-success" id="sl-success-view" style="display: none;">
+                        <div class="sl-success-icon">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#623fe3"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <h3>Message Sent!</h3>
+                        <p>Thanks for reaching out. We'll bring your ideas to life soon.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section brand">
+                <div class="logo">
+                    <img src="/assets/logo-white.png" alt="SOZOLOOP Logo">
+                </div>
+                <p class="tagline">Transforming ideas into reality through cutting-edge 3D printing technology.</p>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+
+                <div class="foot-link">
+                    <a href="#about">About</a>
+                    <a href="#process">Process</a>
+                    <a href="#gallery">Gallery</a>
+                </div>
+
+            </div>
+
+            <div class="footer-section connect">
+                <h3>Connect</h3>
+                <p>Stay tuned. #Sozoloop</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <hr>
+            <p>© 2026 Sozoloop. All rights reserved.</p>
             <p>Designed and Developed By <a href="https://www.instagram.com/_sathvvik">Sathwik M S</a></p>
         </div>
     </footer>

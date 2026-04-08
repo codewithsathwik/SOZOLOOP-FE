@@ -29,18 +29,18 @@ function changeImage(newIndex) {
 function nextImage() {
     // Calculate the next index. 
     let nextIndex = currentIndex + 1;
-    
+
     // If we reach the end of the images, loop back to 0
     if (nextIndex >= images.length) {
-        nextIndex = 0; 
+        nextIndex = 0;
     }
-    
+
     changeImage(nextIndex);
 }
 
 function startAutoPlay() {
     // Run nextImage every 1000 milliseconds (1 second)
-    autoPlayTimer = setInterval(nextImage, 3000); 
+    autoPlayTimer = setInterval(nextImage, 3000);
 }
 
 function resetAutoPlay() {
@@ -56,7 +56,7 @@ startAutoPlay();
 const lenis = new Lenis({
     duration: 1.2, // Controls the speed/smoothness of the scroll
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing function
-    direction: 'vertical', 
+    direction: 'vertical',
     gestureDirection: 'vertical',
     smooth: true,
     mouseMultiplier: 1,
@@ -72,3 +72,21 @@ function raf(time) {
 
 // Start the loop
 requestAnimationFrame(raf);
+
+
+document.getElementById('sl-submit').addEventListener('click', () => {
+    const name = document.getElementById('sl-name').value.trim();
+    const email = document.getElementById('sl-email').value.trim();
+    const subject = document.getElementById('sl-subject').value.trim();
+    const msg = document.getElementById('sl-msg').value.trim();
+    const err = document.getElementById('sl-error');
+
+    if (!name || !email || !subject || !msg) {
+        err.style.display = 'block';
+        return;
+    }
+    err.style.display = 'none';
+    document.getElementById('sl-form-view').style.display = 'none';
+    const sv = document.getElementById('sl-success-view');
+    sv.style.display = 'block';
+});
