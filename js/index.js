@@ -90,3 +90,46 @@ document.getElementById('sl-submit').addEventListener('click', () => {
     const sv = document.getElementById('sl-success-view');
     sv.style.display = 'block';
 });
+
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+});
+
+// Close on nav link click
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        menuBtn.classList.remove('open');
+        mobileMenu.classList.remove('open');
+    });
+});
+
+
+function setScrollPadding() {
+    const navHeight = document.querySelector('header nav').getBoundingClientRect().height + 30;
+    document.documentElement.style.scrollPaddingTop = navHeight + 'px';
+}
+
+setScrollPadding();
+window.addEventListener('resize', setScrollPadding);
+
+// Close menu + scroll after menu collapses
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = link.getAttribute('href');
+
+        // Close menu first
+        menuBtn.classList.remove('open');
+        mobileMenu.classList.remove('open');
+
+        // Wait for menu close animation (matches your 350ms transition)
+        setTimeout(() => {
+            setScrollPadding();
+            document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+        }, 350);
+    });
+});

@@ -16,28 +16,42 @@
 
     </div>
 
-    <!-- navigation bar -->
     <header>
         <nav class="container">
-            <!-- left -->
             <div class="brand-logo left">
                 <a href="/"><img src="/assets/logo.png" alt="Sozoloop Brand Logo"></a>
             </div>
 
-            <div class="menu-btn">☰</div>
-
-            <!-- right -->
-            <div class="right">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#process">Process</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <div><a href="#contact" class="btn1">Get Started</a></div>
-                </ul>
+            <div class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
+
+        <!-- Mobile drawer (outside nav, inside header) -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+            <div class="cta-wrap">
+                <a href="#contact" class="btn1">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Desktop nav (unchanged) -->
+        <div class="right" style="position:absolute; right: 7.5vw; top: 50%; transform: translateY(-50%);">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <div><a href="#contact" class="btn1">Get Started</a></div>
+            </ul>
+        </div>
     </header>
 
     <!-- grid background for page -->
@@ -47,13 +61,14 @@
 
 
     <!-- HERO PAGE -->
-    <section class="hero-page">
+    <section class="hero-page" id="home">
         <div class="container hero-section">
             <div class="pill">
                 <p>Custom 3D Printing</p>
             </div>
             <h1>Transform Ideas Into <br><span class="purple">Reality</span></h1>
-            <p>Where creativity meets technology. Bring your imagination to life with our premium 3D printing services.
+            <p>Where creativity meets technology. Bring your imagination to life with our premium 3D printing
+                services.
             </p>
             <a class="btn1 btn2" href="#works">Explore Works <i class="bi bi-caret-down-fill"></i></a>
 
@@ -143,7 +158,8 @@
                     personalized gifts to one-of-a-kind art pieces, we bring limitless possibilities to life.</p>
                 <div>
                     <ul class="about-badge">
-                        <li><img src="/assets/icons/tick-img.png" alt="Tick Mark">Personalized Design Consultation</li>
+                        <li><img src="/assets/icons/tick-img.png" alt="Tick Mark">Personalized Design Consultation
+                        </li>
                         <li><img src="/assets/icons/tick-img.png" alt="Tick Mark">Premium Materials</li>
                         <li><img src="/assets/icons/tick-img.png" alt="Tick Mark">Fast & Reliable Delivery</li>
                     </ul>
@@ -163,7 +179,7 @@
         </div>
     </section>
 
-    <section class="why-page">
+    <section class="why-page" >
         <div class="container why-section">
             <div class="pill pill2">Why Choose Us</div>
             <h1 class="section-heading">Excellence in Every Print</h1>
@@ -186,7 +202,8 @@
                     </div>
                     <div class="text">
                         <h2>Premium Quality</h2>
-                        <p>Using state-of-the-art 3D printing technology and high-grade materials to deliver exceptional
+                        <p>Using state-of-the-art 3D printing technology and high-grade materials to deliver
+                            exceptional
                             results every time.</p>
                     </div>
                 </div>
@@ -197,7 +214,8 @@
                     </div>
                     <div class="text">
                         <h2>Fast Turnaround</h2>
-                        <p>Quick production times without compromising quality. Get your custom creations delivered when
+                        <p>Quick production times without compromising quality. Get your custom creations delivered
+                            when
                             you need them.</p>
                     </div>
                 </div>
@@ -218,7 +236,8 @@
                     </div>
                     <div class="text">
                         <h2>Eco-Friendly</h2>
-                        <p>Sustainable materials and efficient processes that minimize waste and environmental impact.
+                        <p>Sustainable materials and efficient processes that minimize waste and environmental
+                            impact.
                         </p>
                     </div>
                 </div>
@@ -262,7 +281,8 @@
                             <div class="step-num">02</div>
                             <span class="step-pill">Collaborative</span>
                             <p class="step-title">Design & Refinement</p>
-                            <p class="step-body">We create or refine the 3D model, ensuring every detail matches your
+                            <p class="step-body">We create or refine the 3D model, ensuring every detail matches
+                                your
                                 expectations. You'll review and approve before production.</p>
                         </div>
                     </div>
@@ -273,7 +293,8 @@
                             <div class="step-num">03</div>
                             <span class="step-pill">In production</span>
                             <p class="step-title">3D Printing Magic</p>
-                            <p class="step-body">Watch your concept come to life as our advanced 3D printers craft your
+                            <p class="step-body">Watch your concept come to life as our advanced 3D printers craft
+                                your
                                 custom piece with precision and care.</p>
                         </div>
                     </div>
@@ -283,7 +304,8 @@
                             <div class="step-num">04</div>
                             <span class="step-pill">All yours</span>
                             <p class="step-title">Delivery & Delight</p>
-                            <p class="step-body">Receive your perfectly crafted creation, ready to amaze. Every piece is
+                            <p class="step-body">Receive your perfectly crafted creation, ready to amaze. Every
+                                piece is
                                 quality-checked before shipping.</p>
                         </div>
                     </div>
@@ -293,7 +315,7 @@
 
     </section>
 
-    <section class="photo-gallery">
+    <section class="photo-gallery" id="gallery">
         <div class="container gallery">
             <p class="pill pill2">Portfolio</p>
             <h1 class="section-heading">Our Creations</h2>
@@ -307,11 +329,16 @@
                     <div class="photo-card"><img src="/assets/creations/GALLERY/7.jpg" alt="Creations images"></div>
                     <div class="photo-card"><img src="/assets/creations/GALLERY/8.jpg" alt="Creations images"></div>
                     <div class="photo-card"><img src="/assets/creations/GALLERY/9.jpg" alt="Creations images"></div>
-                    <div class="photo-card"><img src="/assets/creations/GALLERY/10.jpg" alt="Creations images"></div>
-                    <div class="photo-card"><img src="/assets/creations/GALLERY/11.jpg" alt="Creations images"></div>
-                    <div class="photo-card"><img src="/assets/creations/GALLERY/12.jpg" alt="Creations images"></div>
-                    <div class="photo-card"><img src="/assets/creations/GALLERY/13.jpg" alt="Creations images"></div>
-                    <div class="photo-card"><img src="/assets/creations/GALLERY/14.jpg" alt="Creations images"></div>
+                    <div class="photo-card"><img src="/assets/creations/GALLERY/10.jpg" alt="Creations images">
+                    </div>
+                    <div class="photo-card"><img src="/assets/creations/GALLERY/11.jpg" alt="Creations images">
+                    </div>
+                    <div class="photo-card"><img src="/assets/creations/GALLERY/12.jpg" alt="Creations images">
+                    </div>
+                    <div class="photo-card"><img src="/assets/creations/GALLERY/13.jpg" alt="Creations images">
+                    </div>
+                    <div class="photo-card"><img src="/assets/creations/GALLERY/14.jpg" alt="Creations images">
+                    </div>
                 </div>
         </div>
     </section>
@@ -329,8 +356,10 @@
                     <div class="card-content">
                         <h3 class="partner-title">Book Brahma Literature Festival</h3>
                         <p class="partner-description">
-                            One of South India's most celebrated literary gatherings — uniting authors, poets, thinkers,
-                            and readers across Tamil, Telugu, Kannada, and Malayalam traditions. A grand celebration of
+                            One of South India's most celebrated literary gatherings — uniting authors, poets,
+                            thinkers,
+                            and readers across Tamil, Telugu, Kannada, and Malayalam traditions. A grand celebration
+                            of
                             literature, culture, and ideas, bringing together the finest minds
                             and
                             voices.
@@ -373,7 +402,7 @@
 
     </section>
 
-    <section>
+    <section id="contact">
         <div class="container contact-form">
             <div class="sl-card">
                 <form id="sl-form-view" action="#" method="post">
